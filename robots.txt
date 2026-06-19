@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mikoc72dafrei.github.io/cnhome-aiyouxi-com-cn/sitemap.xml
