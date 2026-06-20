@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>百家乐 · 知识参考与索引</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f7f4ed;
+            font-family: 'Georgia', 'Noto Serif SC', 'Songti SC', serif;
+            color: #2b2a27;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+
+        .page-wrap {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #fefbf6;
+            border-radius: 24px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+            padding: 2.5rem 2rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            border-left: 6px solid #b38b5b;
+            padding-left: 1.2rem;
+            margin-bottom: 2rem;
+            color: #3d352a;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #4d4235;
+            margin-top: 2.2rem;
+            margin-bottom: 0.8rem;
+            border-bottom: 1px dashed #d6cebd;
+            padding-bottom: 0.3rem;
+        }
+
+        .subhead {
+            color: #7a6e5d;
+            font-style: italic;
+            font-size: 0.95rem;
+            margin-top: -0.8rem;
+            margin-bottom: 1.6rem;
+        }
+
+        p {
+            margin-bottom: 1.1rem;
+            text-align: justify;
+        }
+
+        a {
+            color: #8a6e4b;
+            text-decoration: none;
+            border-bottom: 1px dotted #cbb99a;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        a:hover {
+            color: #4f3d2a;
+            border-bottom: 1px solid #8a6e4b;
+        }
+
+        .intro-card {
+            background: #f9f5ed;
+            border-radius: 16px;
+            padding: 1.6rem 1.8rem;
+            margin: 1.8rem 0;
+            border-left: 4px solid #d5c3a6;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        .note-box {
+            background: #f1ede4;
+            border-radius: 14px;
+            padding: 1.2rem 1.6rem;
+            margin: 1.6rem 0;
+            border: 1px solid #e0d6c5;
+            position: relative;
+        }
+
+        .note-box::before {
+            content: "💡 提示";
+            display: block;
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            color: #7f6f58;
+            margin-bottom: 0.4rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin: 1.8rem 0;
+        }
+
+        .info-item {
+            background: #fbf9f4;
+            padding: 1rem 1.2rem;
+            border-radius: 14px;
+            border: 1px solid #ede7db;
+        }
+
+        .info-item strong {
+            display: block;
+            font-weight: 500;
+            color: #5f5240;
+            margin-bottom: 0.25rem;
+            font-size: 1rem;
+        }
+
+        .faq-mini {
+            margin-top: 2rem;
+            padding: 1.2rem 1.6rem;
+            background: #f7f2e9;
+            border-radius: 18px;
+        }
+
+        .faq-mini dt {
+            font-weight: 500;
+            margin-top: 0.8rem;
+            color: #4d3f2e;
+        }
+
+        .faq-mini dt:first-child {
+            margin-top: 0;
+        }
+
+        .faq-mini dd {
+            margin-left: 1.2rem;
+            color: #5d5242;
+            font-size: 0.95rem;
+        }
+
+        .footer-note {
+            margin-top: 2.8rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #e2d9ca;
+            font-size: 0.9rem;
+            color: #7c7262;
+            text-align: center;
+        }
+
+        @media (max-width: 640px) {
+            .page-wrap {
+                padding: 1.5rem 1rem;
+            }
+
+            h1 {
+                font-size: 1.6rem;
+                padding-left: 1rem;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 0.9rem;
+            }
+
+            .intro-card {
+                padding: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrap">
+        <h1>百家乐 · 知识对照与延伸阅读</h1>
+        <p class="subhead">日常查询 · 规则索引 · 参考备忘</p>
+
+        <!-- 说明区 / 概括 -->
+        <p>
+            对许多玩家而言，<a href="https://waps-baijiale.com">百家乐</a>不仅是桌面游戏，
+            更是一种需要反复对照规则与概率的类别。下面整理了几组经常被查阅的要点，
+            方便在阅读或讨论时快速定位。
+        </p>
+
+        <!-- 目录感布局：用卡片和网格形成入口 -->
+        <div class="intro-card">
+            <p><strong>▍ 常用查询索引</strong></p>
+            <p>以下条目覆盖了多数玩家在查询时最先关注的部分：基本流程、补牌规则、常见注项与回报率差异。每个条目都可作为单独的知识节点进行扩展阅读。</p>
+        </div>
+
+        <div class="info-grid">
+            <div class="info-item">
+                <strong>📋 基本流程</strong>
+                闲家 / 庄家各发两张牌，依点数决定是否补牌，比较总点数分胜负。
+            </div>
+            <div class="info-item">
+                <strong>📌 补牌规则</strong>
+                闲家0–5补牌，6–7停牌；庄家补牌则视闲家第三张牌点数而定。
+            </div>
+            <div class="info-item">
+                <strong>📊 注项与赔率</strong>
+                庄、闲、和、对子等常见注项，扣除抽水后的理论回报率各有不同。
+            </div>
+            <div class="info-item">
+                <strong>📎 延伸阅读</strong>
+                历史演变、牌桌礼仪、策略讨论、统计模拟等主题均可参照基础规则展开。
+            </div>
+        </div>
+
+        <!-- 提示区 -->
+        <div class="note-box">
+            查询时请留意不同平台或版本的细微差异，尤其是补牌规则与抽水比例。<br>
+            建议对照多份来源进行交叉核对，避免单一信息造成理解偏差。
+        </div>
+
+        <!-- 相关信息区：FAQ 摘要 + 常见对照点 -->
+        <div class="faq-mini">
+            <p style="font-weight: 500; margin-bottom: 0.4rem;">📖 常见对照点（FAQ 摘要）</p>
+            <dl>
+                <dt>Q1：补牌规则是否完全固定？</dt>
+                <dd>是的，在标准版本中补牌由既定规则决定，不涉及玩家选择。但不同变体（如免抽水、超级六等）会略微调整庄家补牌条件。</dd>
+                <dt>Q2：庄家为何有抽水？</dt>
+                <dd>庄家注因胜率略高于闲家，赌场通过5%抽水平衡优势。部分平台对免抽水版本会调整赔率结构。</dd>
+                <dt>Q3：有没有推荐的查阅顺序？</dt>
+                <dd>建议先通读基本流程，再逐步深入到补牌细节与赔率表，最后根据兴趣浏览策略或历史内容。</dd>
+            </dl>
+        </div>
+
+        <!-- 补充说明区，强化知识库入口感觉 -->
+        <h2>相关信息区 · 对照参考</h2>
+        <p>
+            除了上述核心条目，还有几类内容适合放在书签或收藏夹中随时查阅：
+        </p>
+        <ul style="margin-left: 1.6rem; margin-bottom: 1.2rem; color: #3f372c;">
+            <li>术语速查：闲家、庄家、和局、自然牌、例牌等。</li>
+            <li>概率简表：不同注项的胜率、平局几率、长期期望值。</li>
+            <li>版本对比：传统百家乐、免佣百家乐、幸运转盘等差异。</li>
+            <li>策略笔记：虽然每局独立，但资金管理与下注节奏常被讨论。</li>
+        </ul>
+        <p>
+            若需要更完整的规则说明或实时查询，可以直接参考<a href="https://waps-baijiale.com">百家乐</a>上的整理内容，那里提供了结构化的分类与常见问题。
+        </p>
+
+        <!-- 结尾 -->
+        <div class="footer-note">
+            本页为知识索引性质，内容仅供个人学习与对照参考。
+        </div>
+    </div>
+</body>
+</html>
