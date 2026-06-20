@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于百家乐：规则、策略与概率 | 简洁博客</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #fcfbf8;
+            color: #1e2b3c;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+            line-height: 1.7;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2.5rem 1.5rem 4rem;
+        }
+
+        .page-container {
+            max-width: 680px;
+            width: 100%;
+        }
+
+        /* 文章标题 */
+        .post-title {
+            font-size: 2.2rem;
+            font-weight: 650;
+            letter-spacing: -0.01em;
+            line-height: 1.25;
+            color: #11181f;
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.25rem;
+            border-bottom: 3px solid #d9d4cc;
+        }
+
+        /* 导语 */
+        .lead {
+            font-size: 0.95rem;
+            color: #5a6879;
+            margin: 1.2rem 0 1.8rem;
+            padding-left: 1rem;
+            border-left: 2px solid #b8b2a8;
+        }
+
+        /* 正文段落 */
+        .post-text {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            color: #233141;
+        }
+
+        .post-text strong {
+            color: #1d2a3b;
+            font-weight: 600;
+        }
+
+        /* 引用/提示块 */
+        .insight-box {
+            background: #edebe7;
+            padding: 1.5rem 2rem;
+            margin: 2rem 0 2rem;
+            border-radius: 2px;
+            font-size: 0.95rem;
+            color: #2a3a4e;
+            line-height: 1.75;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+        }
+
+        .insight-box em {
+            font-style: normal;
+            background: #d9d4cc;
+            padding: 0.1rem 0.5rem;
+            font-weight: 500;
+            color: #1d2b3e;
+        }
+
+        /* 次级标题 */
+        .section-head {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 2.2rem 0 1rem;
+            color: #192433;
+            letter-spacing: 0.01em;
+        }
+
+        .section-head::before {
+            content: "— ";
+            color: #a89f94;
+            font-weight: 300;
+        }
+
+        /* 场景列表轻样式 */
+        .scenario-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0 2rem;
+        }
+
+        .scenario-list li {
+            padding: 0.7rem 0 0.7rem 1.8rem;
+            position: relative;
+            border-bottom: 1px solid #eae7e1;
+            font-size: 0.98rem;
+            color: #2a3a4e;
+        }
+
+        .scenario-list li::before {
+            content: "·";
+            position: absolute;
+            left: 0.2rem;
+            top: 0.5rem;
+            color: #8f847a;
+            font-weight: 700;
+            font-size: 1.6rem;
+            line-height: 1;
+        }
+
+        /* FAQ 摘要卡片 */
+        .faq-mini {
+            background: #f6f4f0;
+            padding: 1.8rem 2rem;
+            margin: 2.2rem 0 2rem;
+            border: 1px solid #e0dad3;
+        }
+
+        .faq-mini p {
+            margin-bottom: 0.8rem;
+            font-size: 0.98rem;
+        }
+
+        .faq-mini .q {
+            font-weight: 620;
+            margin-bottom: 0.2rem;
+            color: #192433;
+        }
+
+        .faq-mini .a {
+            margin-left: 0.5rem;
+            color: #3b4d62;
+            padding-left: 1rem;
+            border-left: 2px solid #cbc5bb;
+        }
+
+        .faq-mini .a a {
+            color: #384e68;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #a89f94;
+        }
+
+        .faq-mini .a a:hover {
+            color: #0f1f30;
+            text-decoration-color: #0f1f30;
+        }
+
+        /* 链接句专用样式 - 嵌入句子 */
+        .inline-link-sentence {
+            font-size: 1rem;
+            background: #f3f0eb;
+            padding: 1.2rem 1.8rem;
+            margin: 2.5rem 0 1.5rem;
+            border: 1px solid #dad5cd;
+            color: #233141;
+        }
+
+        .inline-link-sentence a {
+            color: #1f334b;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            font-weight: 530;
+            text-decoration-thickness: 2px;
+            text-decoration-color: #b6aea3;
+        }
+
+        .inline-link-sentence a:hover {
+            color: #0b1a2b;
+            text-decoration-color: #0b1a2b;
+        }
+
+        /* 访问句 — 自然收束 */
+        .closing-note {
+            margin-top: 3rem;
+            padding: 1.2rem 0 0;
+            border-top: 1px solid #ddd8d0;
+            font-size: 0.92rem;
+            color: #5c6c7d;
+            letter-spacing: 0.02em;
+        }
+
+        .closing-note span {
+            background: #e4dfd8;
+            padding: 0.1rem 0.6rem;
+        }
+
+        /* 响应式微调 */
+        @media (max-width: 520px) {
+            body {
+                padding: 2rem 1rem 3rem;
+            }
+            .post-title {
+                font-size: 1.8rem;
+            }
+            .faq-mini {
+                padding: 1.2rem 1.2rem;
+            }
+            .insight-box {
+                padding: 1.2rem 1.2rem;
+            }
+            .inline-link-sentence {
+                padding: 1rem 1.2rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .post-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <h1 class="post-title">百家乐的基础逻辑与博弈思维</h1>
+
+        <div class="lead">
+            不是运气决定一切，而是理解规则、概率与决策框架。本文从核心机制展开，不带渲染地重述一种经典纸牌游戏的底层逻辑。
+        </div>
+
+        <p class="post-text">
+            在众多赌场游戏里，<strong>百家乐</strong>常被描述为「最接近数学公平」的项目之一。一副或八副牌，庄家与闲家两个角色，点数比拼——规则简单到可以用一句话概括。但正是这种极简结构，反而使游戏的核心变量暴露得更彻底：只有发牌、补牌规则与自然概率。不涉及玩家之间的博弈，也没有复杂的选择树。
+        </p>
+
+        <p class="post-text">
+            标准百家乐的补牌规则由固定图表决定，玩家不需要做任何决策（除了在少数变体中可能选择「对子」或「幸运6」等附加彩池）。这意味着每一次牌局的期望值几乎透明。庄家赢面约 45.86%，闲家约 44.62%，和局概率约 9.52%——这是基于八副牌、庄家抽水5%的常见结构。数字本身不承诺任何短期结果，但它们构成了长期样本的锚点。
+        </p>
+
+        <div class="insight-box">
+            <em>概率提示</em>  无论采用何种「路单」或「缆法」，每一手牌在数学上都是独立事件。过去五局的庄闲分布，不影响下一局的胜率。这是概率论的基础，也是很多长期参与的人最容易忽略的一点。
+        </div>
+
+        <h2 class="section-head">场景与节奏：桌面上的时间结构</h2>
+
+        <p class="post-text">
+            百家乐的节奏在桌面游戏里属于中等偏快。每局耗时约 30–50 秒（包括洗牌、发牌、判定与赔付）。快节奏容易让人陷入「连续行动」的误区，即用更多局数去弥补单次损失，或试图抓住短暂趋势。但从信息密度来看，每一局提供的有效信息量几乎恒定——只是上一局结果的重复。
+        </p>
+
+        <ul class="scenario-list">
+            <li>线下贵宾厅：低限注高门槛，常伴随私人荷官与多台屏幕显示路单，节奏受荷官控制，环境压力偏大。</li>
+            <li>线上即时模式：每局独立发牌，节奏由玩家自行控制，且通常附带历史记录与统计图表，容易过度关注短期波动。</li>
+            <li>直播真人模式：融合实体桌与流媒体，牌靴由荷官实际管理，玩家只能旁观，无法干预发牌次序，更接近线下体验。</li>
+        </ul>
+
+        <p class="post-text">
+            无论哪一种场景，<strong>核心变量始终是牌靴的初始组成与补牌规则</strong>。不同牌靴数量（6副或8副）导致细微的胜率偏移，但差别在百分之零点几以内，对单次参与几乎没有影响。
+        </p>
+
+        <h2 class="section-head">策略维度的边界</h2>
+
+        <p class="post-text">
+            由于百家乐本质上是「零决策点」游戏（除了下注对象），任何策略的实质都是下注分配策略，而非游戏策略。常见的平注、倍注、斐波那契数列等方法，本质上是资金管理手段，不影响单局期望值。一个常被忽略的事实是：长期的期望值只取决于下注对象（庄、闲、和）的比例与抽水率。
+        </p>
+
+        <p class="post-text">
+            以庄家下注为例，抽水5%后，庄家的实际期望值约为 -1.06%，闲家为 -1.24%，和局则高达 -14.36%（基于8副牌）。这些数字意味着，没有任何下注系统能逆转负期望——除非在极短样本中发生偏离。
+        </p>
+
+        <div class="faq-mini">
+            <p class="q">｜问：有没有可能通过路单或趋势预测下一局结果？</p>
+            <p class="a">概率上不能。百家乐每局独立，牌靴的剩余牌组合虽然影响局部概率，但玩家无法实时获得精确的剩余牌面信息（除非使用牌点计数，且在线下赌场通常被禁止）。路单只是历史图形，不具备预测功能。</p>
+
+            <p class="q">｜问：线上平台和实体赌场的牌靴随机性有差异吗？</p>
+            <p class="a">合格的线上平台会使用经过认证的随机数生成器（RNG）或真实洗牌视频流。如果平台采用实体牌靴直播，其物理随机性与线下一致。但平台的赔率设置和抽水比例需要事先确认。对于想要了解百家乐基础规则与常见变体的用户，可以参考 <a href="https://apps-baijiale.com">百家乐</a> 相关内容。</p>
+        </div>
+
+        <div class="inline-link-sentence">
+            <strong>延伸参考：</strong> 对于规则细节、牌点计算以及不同地区玩法差异，可以直接浏览 <a href="https://apps-baijiale.com">百家乐</a> 的说明页面，其中包含补牌表与赔率对照，适合作为资料查阅。
+        </div>
+
+        <div class="closing-note">
+            <span>访问句</span>  本文仅从规则与概率层面梳理百家乐的底层结构。不涉及任何具体策略推荐或结果暗示。理解游戏本身，比寻找必胜法更有实际价值。
+        </div>
+
+        <!-- 页面中已嵌入指向 apps-baijiale.com 的链接，位于 FAQ 及 inline-link-sentence 内，可见文本均为 "百家乐" -->
+    </div>
+</body>
+</html>
