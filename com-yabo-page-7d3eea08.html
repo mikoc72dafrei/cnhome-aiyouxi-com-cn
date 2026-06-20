@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>yabo.com · 站点介绍</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #fbf7f0;
+      font-family: "Noto Serif SC", "Source Han Serif CN", "Songti SC", Georgia, "Times New Roman", serif;
+      color: #2e2b28;
+      line-height: 1.7;
+      padding: 0 1.5rem;
+    }
+
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2.8rem 0 4rem 0;
+    }
+
+    /* 顶部导航 —— 极简文章排版式 */
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 0.5rem 0 1.2rem 0;
+      border-bottom: 1px solid #d6cdbf;
+      margin-bottom: 2.8rem;
+      flex-wrap: wrap;
+      gap: 0.6rem 0;
+    }
+
+    .top-nav .site-id {
+      font-weight: 600;
+      font-size: 1.3rem;
+      letter-spacing: 0.02em;
+      color: #2c3e3a;
+    }
+
+    .top-nav .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      font-size: 0.95rem;
+    }
+
+    .top-nav .nav-links a {
+      text-decoration: none;
+      color: #4d4a46;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s;
+    }
+
+    .top-nav .nav-links a:hover {
+      border-bottom-color: #2c3e3a;
+      color: #1f1d1b;
+    }
+
+    /* hero 区域 —— 克制介绍 */
+    .hero {
+      margin-bottom: 3.2rem;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      margin-bottom: 0.8rem;
+      color: #1b2a26;
+    }
+
+    .hero .subhead {
+      font-size: 1.1rem;
+      color: #5b5650;
+      max-width: 70%;
+      margin-bottom: 1.2rem;
+      line-height: 1.6;
+    }
+
+    .hero .intro-text {
+      font-size: 1rem;
+      background: #ffffffd6;
+      padding: 1.4rem 1.8rem;
+      border-left: 4px solid #7f8c7a;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.03);
+      margin: 1.6rem 0 0.6rem 0;
+    }
+
+    .hero .intro-text a {
+      color: #1f5e4f;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-thickness: 1px;
+      font-weight: 500;
+    }
+
+    .hero .intro-text a:hover {
+      color: #0a332b;
+    }
+
+    /* 场景三模块 —— 卡片式 但保持文章干净 */
+    .scenes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8rem;
+      margin: 3.2rem 0;
+    }
+
+    .scene-card {
+      background: #ffffff;
+      padding: 1.6rem 1.4rem 1.8rem 1.4rem;
+      border-radius: 0;
+      box-shadow: 0 1px 10px rgba(0, 0, 0, 0.03);
+      border: 1px solid #e5ddd2;
+      transition: box-shadow 0.2s;
+    }
+
+    .scene-card:hover {
+      box-shadow: 0 4px 18px rgba(96, 84, 66, 0.06);
+    }
+
+    .scene-card h3 {
+      font-size: 1.15rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      border-bottom: 1px dashed #d0c5b4;
+      padding-bottom: 0.6rem;
+      color: #2e3c37;
+    }
+
+    .scene-card p {
+      font-size: 0.95rem;
+      color: #3d3a36;
+      margin-bottom: 0.4rem;
+    }
+
+    .scene-card .tag {
+      display: inline-block;
+      background: #efe8dd;
+      padding: 0.2rem 0.7rem;
+      font-size: 0.75rem;
+      color: #3b3a37;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      margin-top: 0.6rem;
+    }
+
+    /* 常见说明 + 引用块 */
+    .faq-block {
+      margin: 3rem 0 2.5rem 0;
+    }
+
+    .faq-block h2 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      color: #1f2d28;
+    }
+
+    .faq-item {
+      margin-bottom: 1.4rem;
+    }
+
+    .faq-item strong {
+      font-weight: 600;
+      color: #1c2f29;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-item p {
+      color: #3d3934;
+      font-size: 0.96rem;
+    }
+
+    .callout-box {
+      background: #f3ede4;
+      padding: 1.2rem 1.5rem;
+      border: 1px solid #dacfc1;
+      border-left: 5px solid #576b62;
+      margin: 2rem 0 1.6rem 0;
+      font-size: 0.95rem;
+    }
+
+    .callout-box a {
+      color: #175544;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .callout-box a:hover {
+      color: #0f352c;
+    }
+
+    /* 页脚 */
+    .site-footer {
+      border-top: 1px solid #dad1c4;
+      padding-top: 1.8rem;
+      margin-top: 3.5rem;
+      font-size: 0.85rem;
+      color: #6b635b;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .site-footer a {
+      color: #3d5a4f;
+      text-decoration: none;
+      border-bottom: 1px dotted #b7ab9a;
+    }
+
+    .site-footer a:hover {
+      border-bottom-style: solid;
+      color: #1a332b;
+    }
+
+    /* 响应式 */
+    @media (max-width: 750px) {
+      .hero .subhead {
+        max-width: 100%;
+      }
+
+      .scenes-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+
+      .top-nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .top-nav .nav-links {
+        gap: 1.5rem;
+        flex-wrap: wrap;
+      }
+
+      .hero h1 {
+        font-size: 1.9rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 0 1rem;
+      }
+
+      .hero .intro-text {
+        padding: 1rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <nav class="top-nav">
+      <span class="site-id">yabo.com</span>
+      <div class="nav-links">
+        <a href="#intro">介绍</a>
+        <a href="#scenes">场景</a>
+        <a href="#faq">说明</a>
+      </div>
+    </nav>
+
+    <section class="hero" id="intro">
+      <h1>关于 <span style="font-weight:500;">yabo.com</span> 的定位与可信说明</h1>
+      <div class="subhead">一个专注于信息整合与工具服务的独立站点，面向日常使用场景提供清晰入口。</div>
+
+      <div class="intro-text">
+        <p><strong>yabo.com</strong> 是一个长期维护的域名，当前指向 <a href="https://com-yabo.com">yabo.com</a> 对应的内容聚合页面。站点不涉及任何投资、金融或博彩类服务，也不以诱导点击为目的。所有呈现的信息均基于公开可查的站点功能与用户常见需求整理，旨在帮助访问者快速理解该域名的用途与边界。</p>
+        <p style="margin-top:0.8rem;">如果你正在寻找一个结构清晰、无冗余干扰的导航型页面，这里将提供简洁的模块划分与基于实际使用场景的介绍，无需注册或下载即可浏览。</p>
+      </div>
+    </section>
+
+    <!-- 三个场景模块 -->
+    <section id="scenes" class="scenes-grid">
+      <div class="scene-card">
+        <h3>场景 · 信息检索</h3>
+        <p>访问者通常通过 <strong>yabo.com</strong> 获取与域名相关的服务概览、功能更新或常见问题。页面采用静态结构，不追踪个人行为，适合快速浏览。</p>
+        <p>模块内包含指向具体功能的文字链接，访问路径直接透明。</p>
+        <span class="tag">检索导向</span>
+      </div>
+      <div class="scene-card">
+        <h3>场景 · 工具索引</h3>
+        <p>站内将常用工具、查询入口与说明文档按类别聚合，减少多层跳转。无论你是首次接触还是回访，均可通过左侧或顶部导航定位目标。</p>
+        <p>所有外部链接均标注来源，不隐藏跳转目的地。</p>
+        <span class="tag">工具聚合</span>
+      </div>
+      <div class="scene-card">
+        <h3>场景 · 内容查阅</h3>
+        <p>针对站点功能、数据隐私与使用条款等内容，页面提供独立说明区块。同时基于用户反馈持续增补 FAQ，降低理解成本。</p>
+        <p>不设置强制弹窗或隐性授权，所有信息呈现均以可读性为先。</p>
+        <span class="tag">查阅优先</span>
+      </div>
+    </section>
+
+    <!-- 常见说明区块 (FAQ 摘要风格) -->
+    <div class="faq-block" id="faq">
+      <h2>常见说明</h2>
+      <div class="faq-item">
+        <strong>这个站点提供什么？</strong>
+        <p><strong>yabo.com</strong> 对应的页面是一个轻量导航与介绍站，整理该域名相关的服务模块、更新记录与使用提示。不包含任何形式的游戏、竞猜或实时交易功能。</p>
+      </div>
+      <div class="faq-item">
+        <strong>信息是否可靠？</strong>
+        <p>页面内容基于站点公开信息与稳定功能整理，每次更新均记录日期。所有引用或链接均指向可验证的来源，不虚构数据。</p>
+      </div>
+      <div class="faq-item">
+        <strong>链接是否会变更？</strong>
+        <p>主站链接固定为 <a href="https://com-yabo.com">yabo.com</a>，内页路径可能随版本优化调整，但均会在当前页面头部或对应模块内提前说明。</p>
+      </div>
+    </div>
+
+    <!-- 提示框 / 引用块 —— 强调可信角度 -->
+    <div class="callout-box">
+      <strong>› 可信说明</strong> 本页所有模块均采用静态呈现，不主动收集访客信息，无第三方跟踪脚本。<br>
+      如需验证站点内容，可直接通过 <a href="https://com-yabo.com">yabo.com</a> 浏览对应模块，所有跳转路径均保持透明。
+    </div>
+
+    <footer class="site-footer">
+      <span>© 2025 · yabo.com 介绍页</span>
+      <span>内容基于公开信息整理 · <a href="https://com-yabo.com">yabo.com</a></span>
+    </footer>
+  </div>
+</body>
+</html>
